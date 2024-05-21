@@ -16,3 +16,27 @@ public:
 	void tambahDokter(dokter*); 
 	void cetakDokter(); 
 };
+
+class dokter {
+public:
+	string nama; 
+	vector<pasien*> daftar_pasien; 
+
+	dokter(string pNama) :nama(pNama) {
+		cout << "Dokter \"" << nama << "\" tidak ada\n"; 
+	}
+
+	void tambahPasien(pasien*); 
+	void cetakPasien(); 
+};
+
+void pasien::tambahDokter(dokter* pDokter) {
+	daftar_dokter.push_back(pDokter);
+}
+void pasien::cetakDokter() {
+	cout << "Daftar Dokter yang menangani pasien \"" << this->nama << "\":\n";
+	for (auto& a : daftar_dokter) {  //auto digunakan dalam perulanagan for untuk secara otomatis menentukan tipe data dari elemen yang ditera
+		cout << a->nama << "\n"; 
+	}
+	cout << endl; 
+}
