@@ -12,7 +12,14 @@ int main() {
 	anak* varAnak2 = new anak("rini"); 
 	anak* varAnak3 = new anak("Dewi"); 
 
-	varIbu->tambahAnak(varAnak1);
+	varIbu->tambahAnak(varAnak1);	//harus ditambah varAnak1 anak karna methodenya parameter, akan eror ketika kosong
 	varIbu->tambahAnak(varAnak2); 
+	varIbu2->tambahAnak(varAnak3); 
+	varIbu2->tambahAnak(varAnak1); 
 
+	varIbu->cetakAnak(); 
+	varIbu2->cetakAnak(); 
+
+	delete varIbu;
+	delete varIbu2; 
 }
